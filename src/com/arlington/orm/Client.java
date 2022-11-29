@@ -8,10 +8,10 @@ public class Client {
 
     public Client(String databaseName, String userName, String password) {
         database = new MysqlDatabase(databaseName, userName, password);
-    }
-
-    public boolean init() {
-        return database.init();
+        if (!database.init()) {
+            System.out.println("Init database failed");
+            System.exit(-1);
+        }
     }
 
     public void close() {

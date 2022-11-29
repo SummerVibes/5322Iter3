@@ -9,11 +9,6 @@ import java.util.*;
 public class NTSS {
     public static void main(String[] args) {
         Client db = new Client("test", "root", "123456");
-        if (!db.init()) {
-            System.out.println("init failed");
-            return;
-        }
-
 //        db.createTable(Student.class);
 
         SessionCmd s = db.getSession();
@@ -30,8 +25,8 @@ public class NTSS {
 //        list.add(stu);
 //        list.add(stu2);
 //
-//        s.getExecuter(Student.class).addAll(list);
-//        s.getExecuter(Student.class).delete().where("id = 2").execute();
+//        s.getExecutor(Student.class).addAll(list);
+//        s.getExecutor(Student.class).delete().where("id = 2").execute();
         s.getExecutor(Student.class).update("name = \'Maria\'").where("id = 1").execute();
 
 
