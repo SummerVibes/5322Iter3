@@ -27,7 +27,7 @@ public class NTSS {
 //
 //        s.getExecutor(Student.class).addAll(list);
 //        s.getExecutor(Student.class).delete().where("id = 2").execute();
-        s.getExecutor(Student.class).update("name = \'Maria\'").where("id = 1").execute();
+        s.getExecutor(Student.class).update("name = 'Maria'").where("id = 1").execute();
 
 
         List<Student> res = s.getExecutor(Student.class).select().execute();

@@ -38,6 +38,7 @@ public class MysqlDatabase extends DatabaseProxy {
             conn.setAutoCommit(false);
         } catch (Exception e) {
             e.printStackTrace();
+            System.exit(0);
             return null;
         }
         return conn;
