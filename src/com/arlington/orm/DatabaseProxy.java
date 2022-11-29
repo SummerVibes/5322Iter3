@@ -1,14 +1,16 @@
 package com.arlington.orm;
 
+import com.arlington.orm.annotation.Id;
 import com.arlington.orm.annotation.MaxLength;
 import com.arlington.orm.annotation.NotNull;
-import com.arlington.orm.annotation.PrimaryKey;
 import com.arlington.orm.common.Utils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.sql.Connection;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 class DatabaseProxy implements DatabaseInterface {
     private boolean init = false;
@@ -175,7 +177,7 @@ class DatabaseProxy implements DatabaseInterface {
             sql.append(" NOT NULL ");
         }
 
-        if (field.getAnnotation(PrimaryKey.class) != null) {
+        if (field.getAnnotation(Id.class) != null) {
             sql.append(" PRIMARY KEY AUTO_INCREMENT ");
         }
     }

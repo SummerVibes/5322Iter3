@@ -1,11 +1,11 @@
 package com.arlington.app;
 
+import com.arlington.orm.annotation.Id;
 import com.arlington.orm.annotation.MaxLength;
 import com.arlington.orm.annotation.NotNull;
-import com.arlington.orm.annotation.PrimaryKey;
 
 public class Student {
-    @PrimaryKey
+    @Id
     private int id;
     @MaxLength(30)
     private String name;
